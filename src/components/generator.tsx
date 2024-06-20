@@ -4,13 +4,6 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { toast } from "sonner";
 import { useRef, useState } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Skeleton } from "./ui/skeleton";
 import { DownloadIcon } from "lucide-react";
 import { Input } from "./ui/input";
@@ -19,8 +12,9 @@ export default function Generator() {
   const animal = useRef<HTMLInputElement>(null);
   const color = useRef<HTMLInputElement>(null);
   const accessory = useRef<HTMLInputElement>(null);
+  const doing = useRef<HTMLInputElement>(null);
+  const style = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
-  const [model, setModel] = useState("sxdl-lightning");
   const [imgUrl, setImgUrl] = useState("");
   const [tperformance, setPerformance] = useState(0);
   const url = process.env.NEXT_PUBLIC_URL || "";
@@ -30,14 +24,18 @@ export default function Generator() {
       setLoading(true);
       const basePrompt =
         animal.current?.value +
-        ", vivid, cheerful, friendly, bright, simple sticker in Pixar style, minimalism in" +
+        ", vivid, cute, friendly, bright, simple sticker in Pixar style, clear background with" +
         color.current?.value +
-        "color, with a" +
+        "color theme, with a" +
         accessory.current?.value +
-        "accessory";
+        "accessory and doing " +
+        doing.current?.value +
+        "and in " +
+        style.current?.value +
+        "style";
       // console.log(model);
       if (animal.current !== null) {
-        const newUrl = url + "?prompt=" + basePrompt + "&model=" + model;
+        const newUrl = url + "?prompt=" + basePrompt;
         const t1 = performance.now();
         const response = await fetch(newUrl, {
           method: "get",
@@ -78,28 +76,52 @@ export default function Generator() {
             ref={animal}
             id="animal"
             name="animal"
-            placeholder="Enter a description of the image you want to generate..."
+            placeholder="dog/ cat/ bird/ fish/ lion...."
           />
         </div>
-        <div className="grid gap-4">
-          <Label htmlFor="color">Color</Label>
-          <Input
-            required
-            ref={color}
-            id="color"
-            name="color"
-            placeholder="Enter a description of the image you want to generate..."
-          />
+        <div className="flex gap-4 flex-row">
+          <div className="grid gap-4 flex-1">
+            <Label htmlFor="color">Color</Label>
+            <Input
+              required
+              ref={color}
+              id="color"
+              name="color"
+              placeholder="blue, golden, red..."
+            />
+          </div>
+          <div className="grid gap-4 flex-1">
+            <Label htmlFor="accessory">Accessory</Label>
+            <Input
+              required
+              ref={accessory}
+              id="accessory"
+              name="accessory"
+              placeholder="hat/ sunglasses/jacket..."
+            />
+          </div>
         </div>
-        <div className="grid gap-4">
-          <Label htmlFor="accessory">Accessory</Label>
-          <Input
-            required
-            ref={accessory}
-            id="accessory"
-            name="accessory"
-            placeholder="Enter a description of the image you want to generate..."
-          />
+        <div className="flex gap-4 flex-row">
+          <div className="grid gap-4 flex-1">
+            <Label htmlFor="doing">Doing...</Label>
+            <Input
+              required
+              ref={doing}
+              id="doing"
+              name="doing"
+              placeholder="sitting, dance, smiling..."
+            />
+          </div>
+          <div className="grid gap-4 flex-1">
+            <Label htmlFor="style">Style</Label>
+            <Input
+              required
+              ref={style}
+              id="style"
+              name="style"
+              placeholder="default, b&w, pixel, 3d..."
+            />
+          </div>
         </div>
 
         <Button
@@ -113,9 +135,9 @@ export default function Generator() {
       </div>
       <div className="flex flex-col min-h-[500px] group items-center justify-center">
         {loading ? (
-          <Skeleton className="w-full h-full rounded-lg" />
+          <Skeleton className="w-full h-full rounded-full" />
         ) : (
-          <div className="flex relative m-2 border shadow hover:shadow-lg hover:shadow-muted transition-all duration-500 shadow-muted aspect-square overflow-hidden rounded-lg">
+          <div className="flex relative m-2 border shadow hover:shadow-lg hover:shadow-muted transition-all duration-500 shadow-muted aspect-square overflow-hidden rounded-full">
             <Image
               src={
                 imgUrl ||
@@ -145,7 +167,7 @@ export default function Generator() {
           </div>
         )}
 
-        <p>
+        <p className="my-2">
           Time taken:{" "}
           <span className="text-primary">
             {(tperformance / 1000).toFixed(2)}
