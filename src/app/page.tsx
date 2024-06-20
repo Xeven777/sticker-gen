@@ -1,9 +1,56 @@
 import Generator from "@/components/generator";
+import s1 from "@/assets/ccfb858a-4d80-4521-b158-ec8c0ce708d6.png";
+import s2 from "@/assets/generated-image (2).png";
+import s3 from "@/assets/generated-image (3).png";
+import s4 from "@/assets/generated-image (4).png";
+import s5 from "@/assets/generated-image (5).png";
+import s6 from "@/assets/generated-image (6).png";
+import s7 from "@/assets/generated-image (7).png";
+import s8 from "@/assets/generated-image (8).png";
+import s9 from "@/assets/generated-image (9).png";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center pb-4">
+    <main className="flex min-h-screen flex-col items-center justify-center pb-4 relative">
+      <Image
+        src={s1}
+        alt="image"
+        placeholder="blur"
+        width={210}
+        className="absolute hidden md:block z-50 rounded-full rotate-3 top-20 right-12 transition-all hover:rotate-0"
+      />
+      <Image
+        src={s2}
+        alt="image"
+        placeholder="blur"
+        width={100}
+        className="absolute hidden md:block z-50 rounded-full -rotate-12 top-10 left-12 transition-all hover:rotate-0"
+      />
+      <Image
+        src={s4}
+        alt="image"
+        placeholder="blur"
+        width={120}
+        className="absolute hidden md:block z-50 rounded-full -rotate-12 bottom-12 left-16 transition-all hover:rotate-0"
+      />
+      <Image
+        src={s3}
+        alt="image"
+        placeholder="blur"
+        width={150}
+        className="absolute hidden md:block -translate-x-12 z-50 rounded-full -rotate-6 bottom-4 left-1/2 transition-all hover:rotate-0"
+      />
+
+      <Image
+        src={s9}
+        alt="image"
+        placeholder="blur"
+        width={180}
+        className="absolute hidden md:block -translate-x-12 z-50 rounded-full -rotate-6 bottom-32 right-10 transition-all hover:rotate-0"
+      />
       <Generator />
+
       <footer className="py-2 px-3 md:absolute bottom-4 right-4 hover:px-4 rounded-md hover:scale-105 transition-all hover:-rotate-1 border shadow shadow-yellow-600">
         Created by{" "}
         <a

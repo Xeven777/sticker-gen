@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { toast } from "sonner";
-import underline from "@/components/underline.png";
+import underline from "@/assets/underline.png";
 import { useRef, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 import { DownloadIcon, Loader2 } from "lucide-react";
