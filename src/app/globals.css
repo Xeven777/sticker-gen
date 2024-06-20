@@ -58,6 +58,14 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-md bg-primary/60;
+}
+
 ::selection {
   @apply bg-primary text-primary-foreground;
 }

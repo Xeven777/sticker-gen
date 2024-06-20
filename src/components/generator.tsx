@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import underline from "@/components/underline.png";
 import { useRef, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
-import { DownloadIcon } from "lucide-react";
+import { DownloadIcon, Loader2 } from "lucide-react";
 import { Input } from "./ui/input";
 
 export default function Generator() {
@@ -27,7 +27,7 @@ export default function Generator() {
         animal.current?.value +
         ", vivid, cute, friendly, bright, simple sticker in Pixar style, clear background with" +
         color.current?.value +
-        "color theme, with a" +
+        "color theme and border, with a" +
         accessory.current?.value +
         "accessory and doing " +
         doing.current?.value +
@@ -77,7 +77,7 @@ export default function Generator() {
           </h1>
 
           <p className="text-muted-foreground">
-            Generate unique stickers from text prompts.
+            Generate unique stickers from text prompts! 🤩😎
           </p>
         </div>
         <div className="grid gap-4">
@@ -130,7 +130,7 @@ export default function Generator() {
               ref={style}
               id="style"
               name="style"
-              placeholder="default, b&w, pixel, 3d..."
+              placeholder="sketch, b&w, pixel, 3d..."
             />
           </div>
         </div>
@@ -141,7 +141,8 @@ export default function Generator() {
           onClick={() => generateImage()}
           disabled={loading}
         >
-          Generate Sticker
+          Generate Sticker{" "}
+          {loading && <Loader2 size={20} className="ml-2 animate-spin" />}
         </Button>
       </div>
       <div className="flex flex-col min-h-[500px] group items-center justify-center">
@@ -168,9 +169,10 @@ export default function Generator() {
                     a.href = imgUrl;
                     a.download = "generated-image.png";
                     a.click();
+                    toast.success("Image downloaded successfully!");
                   }
                 }}
-                className="absolute bottom-2 right-2 backdrop-blur-md bg-white/20 hover:bg-white/30 rounded-full p-2"
+                className="absolute bottom-2 mx-auto shadow-md -translate-x-1/2 left-1/2 backdrop-blur-md bg-white/30 hover:bg-white/30 rounded-full p-2"
               >
                 <DownloadIcon />
               </Button>
