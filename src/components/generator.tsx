@@ -3,6 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { toast } from "sonner";
+import underline from "@/components/underline.png";
 import { useRef, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 import { DownloadIcon } from "lucide-react";
@@ -64,7 +65,17 @@ export default function Generator() {
     <div className="grid md:grid-cols-2 grid-cols-1 gap-24 max-w-6xl mx-auto px-4 py-8 md:py-12 w-full">
       <div className="flex flex-col gap-6">
         <div className="grid gap-4">
-          <h1 className="text-3xl font-bold">Sticker Generator</h1>
+          <h1 className="text-3xl md:text-4xl font-bold relative text-shadow">
+            Sticker Generator
+            <Image
+              src={underline}
+              alt="."
+              width={130}
+              placeholder="blur"
+              className="absolute left-1 -rotate-3 -bottom-3"
+            />
+          </h1>
+
           <p className="text-muted-foreground">
             Generate unique stickers from text prompts.
           </p>

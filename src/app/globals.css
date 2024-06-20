@@ -61,3 +61,7 @@
 ::selection {
   @apply bg-primary text-primary-foreground;
 }
+
+.text-shadow {
+  text-shadow: 0 1px 9px rgba(228, 193, 116, 0.547);
+}
