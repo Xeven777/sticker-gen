@@ -17,29 +17,29 @@ export default function Home() {
         src={s1}
         alt="image"
         placeholder="blur"
-        width={210}
-        className="absolute bottom-12 size-32 md:size-64 -right-3 block z-50 rounded-full rotate-3 md:top-20 md:right-12 transition-all hover:rotate-0"
+        width={220}
+        className="absolute bottom-12 size-32 lg:size-52 -right-3 block z-50 rounded-full rotate-3 lg:top-12 lg:right-16 transition-all hover:rotate-0"
       />
       <Image
         src={s2}
         alt="image"
         placeholder="blur"
         width={100}
-        className="absolute hidden md:block z-50 rounded-full -rotate-12 top-10 left-12 transition-all hover:rotate-0"
+        className="absolute hidden lg:block z-50 rounded-full -rotate-12 top-10 left-12 transition-all hover:rotate-0"
       />
       <Image
         src={s4}
         alt="image"
         placeholder="blur"
         width={120}
-        className="absolute z-50 rounded-full -rotate-12 left-0 select-none size-20 md:size-52 md:bottom-12 md:left-16 transition-all hover:rotate-0"
+        className="absolute z-50 rounded-full -rotate-12 left-0 select-none size-20 lg:size-40 lg:bottom-12 lg:left-16 transition-all hover:rotate-0"
       />
       <Image
         src={s3}
         alt="image"
         placeholder="blur"
         width={150}
-        className="absolute hidden md:block -translate-x-12 z-50 rounded-full -rotate-6 bottom-4 left-1/2 transition-all hover:rotate-0"
+        className="absolute hidden lg:block -translate-x-12 z-50 rounded-full -rotate-6 bottom-4 left-1/2 transition-all hover:rotate-0"
       />
 
       <Image
@@ -47,7 +47,7 @@ export default function Home() {
         alt="image"
         placeholder="blur"
         width={180}
-        className="absolute hidden md:block -translate-x-12 z-50 rounded-full -rotate-6 bottom-32 right-10 transition-all hover:rotate-0"
+        className="absolute hidden lg:block -translate-x-12 z-50 rounded-full -rotate-6 bottom-32 right-10 transition-all hover:rotate-0"
       />
       <Generator />
       <div className="absolute w-64 h-52 top-5 left-3 rounded-full bg-violet-800/30 blur-3xl -z-10" />

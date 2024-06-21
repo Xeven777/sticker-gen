@@ -154,6 +154,8 @@ export default function Generator() {
             <Image
               src={imgUrl || img1}
               alt="Generated Image"
+              priority
+              placeholder="blur"
               width={600}
               height={600}
               className="max-w-full object-cover group-hover:scale-110 transition-all duration-700"
