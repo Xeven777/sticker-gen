@@ -8,6 +8,7 @@ const inter = Sora({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "AI Sticker Generator",
   description: "Generate Cool stickers using AI ✨",
+  metadataBase: new URL("https://sticker-gen.vercel.app"),
 };
 
 export default function RootLayout({
