@@ -3,10 +3,10 @@ import s1 from "@/assets/ccfb858a-4d80-4521-b158-ec8c0ce708d6.png";
 import s2 from "@/assets/generated-image (2).png";
 import s3 from "@/assets/generated-image (3).png";
 import s4 from "@/assets/generated-image (4).png";
-import s5 from "@/assets/generated-image (5).png";
-import s6 from "@/assets/generated-image (6).png";
-import s7 from "@/assets/generated-image (7).png";
-import s8 from "@/assets/generated-image (8).png";
+// import s5 from "@/assets/generated-image (5).png";
+// import s6 from "@/assets/generated-image (6).png";
+// import s7 from "@/assets/generated-image (7).png";
+// import s8 from "@/assets/generated-image (8).png";
 import s9 from "@/assets/generated-image (9).png";
 import Image from "next/image";
 
@@ -18,7 +18,7 @@ export default function Home() {
         alt="image"
         placeholder="blur"
         width={210}
-        className="absolute hidden md:block z-50 rounded-full rotate-3 top-20 right-12 transition-all hover:rotate-0"
+        className="absolute bottom-12 size-32 md:size-64 -right-3 block z-50 rounded-full rotate-3 md:top-20 md:right-12 transition-all hover:rotate-0"
       />
       <Image
         src={s2}
@@ -32,7 +32,7 @@ export default function Home() {
         alt="image"
         placeholder="blur"
         width={120}
-        className="absolute hidden md:block z-50 rounded-full -rotate-12 bottom-12 left-16 transition-all hover:rotate-0"
+        className="absolute z-50 rounded-full -rotate-12 left-0 select-none size-20 md:size-52 md:bottom-12 md:left-16 transition-all hover:rotate-0"
       />
       <Image
         src={s3}
