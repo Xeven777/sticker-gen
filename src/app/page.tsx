@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center pb-4 relative">
+    <main className="flex min-h-screen flex-col items-center justify-center pb-4 relative overflow-x-hidden">
       <Image
         src={s1}
         alt="image"
@@ -50,6 +50,10 @@ export default function Home() {
         className="absolute hidden md:block -translate-x-12 z-50 rounded-full -rotate-6 bottom-32 right-10 transition-all hover:rotate-0"
       />
       <Generator />
+      <div className="absolute w-64 h-52 top-5 left-3 rounded-full bg-violet-800/30 blur-3xl -z-10" />
+      <div className="absolute w-64 h-52 bottom-24 left-40 rounded-full bg-amber-500/30 blur-3xl -z-10" />
+      <div className="absolute w-64 h-52 rounded-full top-0 -right-10 bg-red-500/30 blur-3xl -z-10" />
+      <div className="absolute w-64 h-52 rounded-full md:bottom-40 right-40 bg-yellow-500/30 blur-3xl -z-10" />
 
       <footer className="py-2 px-3 md:absolute bottom-4 right-4 hover:px-4 rounded-md hover:scale-105 transition-all hover:-rotate-1 border shadow shadow-yellow-600">
         Created by{" "}
