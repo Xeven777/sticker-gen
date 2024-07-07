@@ -24,21 +24,20 @@ export default function Home() {
         src={s2}
         alt="image"
         placeholder="blur"
-        width={100}
+        width={130}
         className="absolute hidden lg:block z-50 rounded-full -rotate-12 top-10 left-12 transition-all hover:rotate-0"
       />
       <Image
         src={s4}
         alt="image"
-        placeholder="blur"
-        width={120}
+        width={200}
         className="absolute z-50 rounded-full -rotate-12 left-0 select-none size-20 lg:size-40 lg:bottom-12 lg:left-16 transition-all hover:rotate-0"
       />
       <Image
         src={s3}
         alt="image"
         placeholder="blur"
-        width={150}
+        width={160}
         className="absolute hidden lg:block -translate-x-12 z-50 rounded-full -rotate-6 bottom-4 left-1/2 transition-all hover:rotate-0"
       />
 
