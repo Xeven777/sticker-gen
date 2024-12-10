@@ -26,7 +26,7 @@ export default function Generator() {
       setLoading(true);
       const basePrompt =
         animal.current?.value +
-        ", vivid, cute, friendly, bright, simple sticker in Pixar style, clear background with" +
+        ", vivid, bright, simple sticker in papercraft style, clear background with" +
         color.current?.value +
         "color theme and border, with a" +
         accessory.current?.value +
